@@ -1,0 +1,653 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    font-family:-apple-system, BlinkMacSystemFont,"SF Pro Display",
+    "SF Pro Text",Helvetica,Arial,sans-serif;
+    font-weight:400;
+    letter-spacing:-0.01em;
+}
+
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:44px;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #e5e5e5;
+    z-index:1000;
+}
+
+.menu{
+    max-width:1200px;
+    margin:auto;
+}
+
+.menu ul{
+    height:44px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    list-style:none;
+}
+
+.menu ul li a{
+    color:#000;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.menu ul li a:hover{
+    color:#0071e3;
+}
+
+.menu i{
+    font-size:18px;
+}
+
+
+/* HERO VIDEO */
+
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
+
+/* dark overlay */
+
+.hero::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+}
+
+
+/* HERO TEXT */
+
+.hero-content{
+    position:relative;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:60px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.hero-content p{
+    font-size:22px;
+}
+
+
+/* BUTTON */
+
+.btn{
+    margin-top:20px;
+    padding:12px 30px;
+    border-radius:30px;
+    background:#0071e3;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+.btn:hover{
+    background:#005bb5;
+}
+
+
+/* PROMO SECTION */
+.product-video{
+    width:700px;
+    max-width:85%;
+    align-self: center;
+    margin-bottom:30px;
+    border-radius:20px;
+}
+
+.product{
+    height:100vh;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: flex-start; /* ย้ายทุกอย่างไปชิดซ้าย */
+    text-align: left;        /* ให้ตัวหนังสือชิดซ้าย */
+    padding-left: 10%;       /* เว้นระยะห่างจากขอบจอฝั่งซ้าย 10% เพื่อความสวยงาม */
+    color:white;
+}
+
+.product p{
+    font-size:20px;
+    color:rgb(255, 255, 255);
+}
+
+/* PRODUCT GRID */
+
+.products{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+}
+
+
+.product-card {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* จัดเนื้อหาไว้กลางหน้าจอ */
+    align-items: center;
+    text-align: center;
+    padding: 80px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    margin-bottom: 20px; /* เว้นระยะห่างระหว่างหน้า */
+}
+
+/* --- เจาะจงรูปภาพทีละหน้า --- */
+
+/* หน้า iPhone */
+#iphone-card {
+    background-image: url("/static/img/17n.jpg"); /* เปลี่ยนชื่อไฟล์รูป iPhone ของคุณที่นี่ */
+}
+
+/* หน้า iPad (ค่อยมาเติมรูปทีหลัง) */
+#ipad-card {
+    background-color: #f5f5f7; 
+    color: black; /* iPad ส่วนใหญ่ในเว็บ Apple มักใช้พื้นหลังสว่าง ตัวหนังสือดำ */
+}
+
+/* ปรับแต่ง Font ในการ์ดให้ดูพรีเมียมขึ้น */
+.product-card h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 24px;
+    font-weight: 400;
+    color: inherit; /* ใช้สีตามที่ตั้งไว้ใน ID Card */
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+    color:#777;
+}
+
+
+
+.apple-headline {
+    font-size: 64px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom:15px;
+
+    background: linear-gradient(180deg, #d0fcfc 0%, #a1a1a6 100%);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent; 
+    -webkit-text-fill-color: transparent;
+
+    letter-spacing: -0.02em;
+}
+
+/* สไตล์ชื่อรุ่นด้านบน */
+.product-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom:10px;
+}
+
+/* สไตล์รายละเอียดชิป */
+.chip-info {
+    font-size: 28px !important; 
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+    margin-bottom:20px;
+}
+
+
+/* คอนเทนเนอร์สำหรับควบคุมการจัดวางให้อยู่ขวา */
+.purchase-container {
+    width: 100%;             /* ยืดเต็มความกว้าง */
+    display: flex;
+    justify-content: flex-end; /* ผลักเนื้อหาข้างในไปทางขวาสุด */
+    padding-right: 10%;      /* เว้นระยะจากขอบขวาให้เท่ากับ padding-left ที่คุณมี */
+}
+
+/* ตัวแถบแคปซูลสีดำ */
+.purchase-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1d1d1f; /* สีเทาเข้มเกือบดำสไตล์ Apple */
+    border-radius: 50px;
+    padding: 6px 6px 6px 20px; /* เว้นระยะในแถบ (ฝั่งซ้ายกว้างหน่อยเพื่อให้ราคาดูโปร่ง) */
+    border: 1px solid #424245; /* เส้นขอบบางๆ ให้ดูมีมิติ */
+}
+
+/* ข้อความราคา */
+.price-text {
+    color: #f5f5f7;
+    font-size: 17px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+/* ปุ่มเลือกซื้อสีฟ้า */
+.buy-button {
+    background-color: #0071e3;
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.buy-button:hover {
+    background-color: #0077ed;
+}
+
+/* ตัวแถบแคปซูล */
+.purchase-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1d1d1f; 
+    border-radius: 50px;
+    padding: 6px; /* ปรับ padding ให้เท่ากันรอบด้านสำหรับดีไซน์แบบปุ่มคู่ */
+    border: 1px solid #424245;
+    
+    /* --- เพิ่มจุดนี้เพื่อแยกปุ่มห่างกัน --- */
+    gap: 12px;  /* ปรับค่านี้เพื่อเพิ่ม/ลด ระยะห่างระหว่าง 2 ปุ่ม */
+}
+
+/* สไตล์ปุ่มดูเพิ่มเติม (สีเดียวกับปุ่มเลือกซื้อ) */
+/* สไตล์ปุ่มดูเพิ่มเติม (แบบสีใส) */
+.learn-more-button {
+    background-color: transparent; /* ทำให้พื้นหลังใส */
+    color: #2997ff;                /* สีข้อความฟ้าแบบ Apple */
+    text-decoration: none;         /* เอาเส้นใต้เดิมออก */
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;     /* ใส่ transition ให้การเปลี่ยนสีนุ่มนวล */
+    white-space: nowrap;
+}
+
+/* เมื่อเอาเมาส์ชี้ (Hover) ที่ปุ่มดูเพิ่มเติม */
+.learn-more-button:hover {
+    background-color: rgba(0, 102, 255, 0.15); /* พื้นหลังสีฟ้าจางๆ เมื่อชี้ */
+    color: #0077ed;                            /* สีข้อความเข้มขึ้น */
+    text-decoration: none;                     /* มั่นใจว่าไม่มีเส้นใต้ขึ้นมา */
+}
+
+/* ส่วนปุ่มเลือกซื้อ (ให้คงเดิมเพื่อเป็นจุดเด่น) */
+.buy-button {
+    background-color: #0071e3;
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.buy-button:hover {
+    background-color: #0077ed;
+}
+
+/* ตัวแถบแคปซูล */
+.purchase-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1d1d1f; 
+    border-radius: 50px;
+    padding: 6px;
+    border: 1px solid #424245;
+    gap: 12px;
+}
+
+/* คอนเทนเนอร์หลักที่คุมทั้งข้อความและปุ่ม */
+.product-content-right {
+    display: flex;
+    flex-direction: column;   /* เรียงจากบนลงล่าง */
+    align-items: center;      /* จัดให้อยู่กึ่งกลางของกลุ่ม (หรือ flex-end ถ้าจะชิดขวา) */
+    gap: 20px;                /* ระยะห่างระหว่างข้อความกับแถบปุ่ม */
+    margin-left: auto;        /* ดันทั้งกลุ่มไปทางขวา */
+    margin-right: 2%;        /* เว้นระยะจากขอบจอขวา */
+}
+
+
+.product-info h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: 0;
+
+
+    background: linear-gradient(180deg, #392a7e 0%, #845dc4 100%); /* สีเดียวกับ MacBook Pro */
+    
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent; 
+    -webkit-text-fill-color: transparent;
+
+
+    letter-spacing: -0.02em;
+}
+
+.product-info p {
+    font-size: 24px;
+    color: #f5f5f7; 
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+
+.purchase-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(29, 29, 31, 0.8); /* สีเข้มโปร่งแสงนิดๆ แบบ Apple */
+    border-radius: 50px;
+    padding: 6px;
+    gap: 15px; /* ระยะห่างระหว่างปุ่ม "ดูเพิ่มเติม" และ "เลือกซื้อ" */
+}
+
+/* ปุ่มดูเพิ่มเติม (ใสแต่มี Hover) */
+.learn-more-button {
+    background-color: transparent;
+    color: #2997ff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.learn-more-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+}
+
+/* คอนเทนเนอร์หลักที่คุม 3 กล่อง */
+.products-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* แบ่งเป็น 3 คอลัมน์เท่าๆ กัน */
+    gap: 20px;       /* ระยะห่างระหว่างกล่อง */
+    padding: 20px;
+    background-color: #ffffff; /* พื้นหลังสีดำให้เข้ากับธีม */
+    height: 80vh;    /* ปรับความสูงตามต้องการ */
+}
+
+/* สไตล์พื้นฐานของกล่องเล็ก */
+.small-card {
+    position: relative;
+    height: 80vh; /* หรือปรับตามความสวยงาม */
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 40px;
+    color: white; /* สีข้อความหลัก */
+}
+.small-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* ทึบเฉพาะด้านบน 30% แรก */
+    height: 40%; 
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    
+    z-index: 0;
+}
+.card-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.card-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+
+#ipad-card, #watch-card, #airpods-card {
+    background-image: none;
+    background-color: #000;
+}
+
+
+.small-card h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.small-card p {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #ffffff;
+}
+
+/* แถบปุ่มแบบย่อสำหรับ 3 กล่อง */
+.mini-purchase-bar {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.learn-more-link {
+    color: #0071e3;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.learn-more-link:hover { text-decoration: underline; }
+
+.buy-button-small {
+    background-color: #0071e3;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* คลาสสำหรับควบคุมตำแหน่งข้อความภายใน Card */
+.card-content.text-left {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.card-content.text-center {
+    align-items: center;
+    text-align: center;
+}
+
+.card-content.text-right {
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 40px;
+}
+
+/* ปรับให้ card-content ยืดเต็มพื้นที่เพื่อดันข้อความไปซ้าย-ขวาได้ */
+.card-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* คลาสสำหรับทำตัวอักษร Gradient แบบ Apple */
+.apple-gradient-text {
+    font-weight: 700;
+    background: linear-gradient(180deg, #88dbd4 0%, #8d8b8b 100%);
+    
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+    color: transparent; 
+    -webkit-text-fill-color: transparent;
+    
+    letter-spacing: -0.02em;
+    display: inline-block; /* ช่วยให้พื้นหลังคลุมตัวอักษรได้แม่นยำขึ้น */
+}
+
+/* ปรับขนาด h1 ในกล่องเล็กแยกต่างหาก */
+.small-card h1.apple-gradient-text {
+    font-size: 32px; /* ขนาดสำหรับ iPad, Watch, AirPods */
+    margin-bottom: 5px;
+}
+
+/* --- สไตล์ตัวอักษร Gradient สำหรับ 3 ตัวล่าง --- */
+.apple-gradient-small {
+    font-size: 32px; /* ขนาดพอเหมาะกับกล่องเล็ก */
+    font-weight: 700;
+    background: linear-gradient(180deg, #d0fcfc 0%, #a1a1a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+/* --- สไตล์คำโปรย (สีขาวและมีเงาเพื่อให้อ่านง่ายบนวิดีโอ) --- */
+.text-white-small {
+    color: #ffffff;
+    font-size: 17px;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* ช่วยให้ไม่กลืนกับวิดีโอ */
+}
+
+/* --- แถบปุ่มแบบแคปซูล (แยกจาก iPhone) --- */
+.purchase-bar-small {
+    display: flex;
+    align-items: center;
+    background-color: rgba(29, 29, 31, 0.8); /* พื้นหลังเข้มโปร่งแสง */
+    border-radius: 50px;
+    padding: 5px 8px;
+    gap: 4px;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- ปุ่ม "ดูเพิ่มเติม" แบบไม่มีขีดเส้นใต้ --- */
+.learn-more-button-small {
+    color: #2997ff;
+    text-decoration: none; /* เอาขีดเส้นใต้ ออก */
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.learn-more-button-small:hover {
+    background-color: rgba(0, 113, 227, 0.15); /* ชี้แล้วมีสีฟ้าจางๆ */
+    text-decoration: none;
+}
+
+/* --- ปุ่ม "ซื้อ" ขนาดเล็ก --- */
+.buy-button-small {
+    background-color: #0071e3;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+/* คอนเทนเนอร์เนื้อหาของกล่องเล็ก - บังคับให้ยืดเต็มเพื่อจัดตำแหน่ง */
+.small-card-content {
+    position: relative;
+    z-index: 2; /* ให้อยู่เหนือ overlay และ video */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px; /* ระยะห่างจากขอบกล่อง */
+}
+
+/* --- คลาสสำหรับเลือกฝั่ง (เลือกใช้อันใดอันหนึ่งใน HTML) --- */
+
+.pos-left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.pos-center {
+    align-items: center;
+    text-align: center;
+}
+
+.pos-right {
+    align-items: flex-end;
+    text-align: right;
+}

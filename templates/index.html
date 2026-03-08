@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+<video autoplay muted loop class="hero-video">
+<source src="/static/video/555.mp4" type="video/mp4">
+</video>
+
+</section>
+
+
+<section class="product">
+
+<video class="product-video" autoplay muted loop>
+<source src="static/video/Macbook.mp4" type="video/mp4">
+</video>
+
+    <div class="product-title">MacBook Pro</div>
+    <h2 class="apple-headline">ก้าวข้ามทุกความเร็ว MacBook Pro ใหม่</h2>
+    <p class="chip-info">วันนี้มาพร้อมชิป M5, M5 Pro และ M5 Max</p>
+    
+<div class="purchase-bar">
+    <span class="price-text">เริ่มต้นที่ ฿56,900</span>
+    <a class="buy-button" href="#">เลือกซื้อ</a>
+</div>
+
+</section>
+
+<section class="products">
+
+<div class="product-card" id="iphone-card">
+    <div class="product-content-right">
+        <div class="product-info">
+            <h1>iPhone 17 Pro</h1>
+            <p>ที่สุดของความโปร</p>
+        </div>
+
+        <div class="purchase-bar">
+            <a class="learn-more-button" href="#">ดูเพิ่มเติม</a>
+            <a class="buy-button" href="#">เลือกซื้อ</a>
+        </div>
+    </div>
+</div>
+</section>
+<section class="products-row">
+    <div class="small-card" id="ipad-card">
+        <video autoplay muted loop playsinline class="card-video">
+            <source src="/static/video/iPad.mp4" type="video/mp4">
+        </video>
+        <div class="small-card-content pos-center">
+            <h1 class="apple-gradient-text">iPad Air</h1> <p>บาง เบา แรง</p>
+            <div class="purchase-bar-small">
+                <a class="learn-more-button-small" href="#">ดูเพิ่มเติม</a>
+                <a class="buy-button-small" href="#">ซื้อ</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-card" id="watch-card">
+        <video autoplay muted loop playsinline class="card-video">
+            <source src="/static/video/Watch.mp4" type="video/mp4">
+        </video>
+        <div class="small-card-content pos-center">
+            <h1 class="apple-gradient-text">Apple Watch Ultra</h1>
+            <p>นาฬิกาสปอร์ตและการผจญภัยที่เหนือชั้น</p>
+            <div class="purchase-bar-small">
+                <a class="learn-more-button-small" href="#">ดูเพิ่มเติม</a>
+                <a class="buy-button-small" href="#">ซื้อ</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-card" id="airpods-card">
+        <video autoplay muted loop playsinline class="card-video">
+            <source src="/static/video/AirPods.mp4" type="video/mp4">
+        </video>
+        <div class="small-card-content pos-center">
+            <h1 class="apple-gradient-text">AirPods Pro 3</h1>
+            <p>การตัดเสียงรบกวนแบบแอ็คทีฟ ในแบบที่คุณไม่เคยได้ยินมาก่อน</p>
+            <div class="purchase-bar-small">
+                <a class="learn-more-button-small" href="#">ดูเพิ่มเติม</a>
+                <a class="buy-button-small" href="#">ซื้อ</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
