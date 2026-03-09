@@ -1,48 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Style</title>
 
-<title>Apple Style</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
 
-<link rel="stylesheet" href="/static/css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
 
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
 
-<link rel="stylesheet" 
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+  <body>
+    <nav>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="/"><i class="bi bi-apple"></i></a>
+          </li>
 
-<body>
+          <li><a href="/mac">Mac</a></li>
+          <li><a href="/ipad">iPad</a></li>
+          <li><a href="/iphone">iPhone</a></li>
+          <li><a href="/watch">Watch</a></li>
+          <li><a href="/support">Support</a></li>
 
-<nav>
-<div class="menu">
+          <li>
+            <a href="#"><i class="bi bi-search"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-bag"></i></a>
+          </li>
+          <li class="nav-account">
+            <button class="account-btn" onclick="toggleMenu()">
+              <i class="bi bi-person"></i>
+            </button>
+            <div class="account-menu" id="accountMenu">
+              {% if current_user.is_authenticated %}
+              <p class="menu-username">{{ current_user.username }}</p>
+              <hr />
+              <a href="{{ url_for('products') }}">จัดการสินค้า</a>
+              <a href="{{ url_for('logout') }}">Logout</a>
+              {% else %}
+              <a href="{{ url_for('login') }}"> <i class="bi bi-person-circle" style="margin-right: 6px;"></i>ลงชื่อเข้าใช้</a>
 
-<ul>
-
-<li><a href="/"><i class="bi bi-apple"></i></a></li>
-
-<li><a href="/mac">Mac</a></li>
-<li><a href="/ipad">iPad</a></li>
-<li><a href="/iphone">iPhone</a></li>
-<li><a href="/watch">Watch</a></li>
-<li><a href="/support">Support</a></li>
-
-<li><a href="#"><i class="bi bi-search"></i></a></li>
-<li><a href="#"><i class="bi bi-bag"></i></a></li>
-
-</ul>
-
-</div>
-</nav>
-
-{% block content %}{% endblock %}
-
-</body>
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    {% block content %}{% endblock %}
+  </body>
 </html>
+
+<script>
+function toggleMenu() {
+  document.getElementById('accountMenu').classList.toggle('show');
+}
+
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-account')) {
+    document.getElementById('accountMenu').classList.remove('show');
+  }
+});
+</script>
