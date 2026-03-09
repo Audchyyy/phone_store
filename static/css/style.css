@@ -651,3 +651,62 @@ footer{
     align-items: flex-end;
     text-align: right;
 }
+
+
+/* จัดตำแหน่ง Navbar ไอเทม */
+.nav-user-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* ตั้งค่า Dropdown Menu */
+.user-menu {
+    display: none; /* ซ่อนไว้ก่อน */
+    position: absolute;
+    top: 100%; /* ให้โผล่ใต้ Navbar */
+    right: 0;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid #d2d2d7;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+/* แสดงเมื่อเอาเมาส์ไปวางที่รายการ li */
+.nav-user-item:hover .user-menu {
+    display: block;
+}
+
+.user-info {
+    font-size: 12px;
+    color: #6e6e73;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.menu-link {
+    display: block;
+    padding: 8px 0;
+    color: #0071e3 !important;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #f5f5f7;
+    text-align: left;
+}
+
+.menu-link:last-child {
+    border-bottom: none;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}
+
+.sign-out {
+    color: #ff3b30 !important; /* สีแดงสำหรับ Sign Out */
+}
